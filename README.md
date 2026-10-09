@@ -1,6 +1,6 @@
 # Tech Store Management
 
-Website quản lý bán hàng cho cửa hàng thiết bị điện tử, viết bằng Laravel. Bài tập cuối khóa đào tạo BrSE (đề bài: Mini Sales Management).
+Website quản lý bán hàng cho cửa hàng thiết bị điện tử.
 
 Cửa hàng nhỏ thường ghi sản phẩm và đơn hàng bằng sổ tay hoặc Excel: khó tra cứu, không biết nhân viên nào bán đơn nào, ai cũng sửa được dữ liệu. Tech Store Management gom sản phẩm, danh mục, nhân viên và đơn hàng vào một hệ thống, có phân quyền giữa **Quản lý** và **Nhân viên bán hàng**.
 
