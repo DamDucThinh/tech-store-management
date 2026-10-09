@@ -1,0 +1,140 @@
+HƯỚNG DẪN CHẠY CHƯƠNG TRÌNH MINI SALES MANAGEMENT
+=================================================
+
+Thư mục project:
+/Users/damthinh/Documents/Công việc/JVB /Dự án BrSE/mini-sales-management
+
+(Lưu ý: tên thư mục "JVB " có dấu cách ở cuối, khi gõ lệnh phải đặt đường dẫn trong dấu nháy kép.)
+
+
+-------------------------------------------------
+A. CHẠY HÀNG NGÀY (máy đã cài đặt xong)
+-------------------------------------------------
+
+Bước 1. Mở Terminal, vào thư mục project:
+
+    cd "/Users/damthinh/Documents/Công việc/JVB /Dự án BrSE/mini-sales-management"
+
+Bước 2. Bảo đảm MySQL đang chạy:
+
+    brew services list
+
+Nếu dòng mysql không hiện "started" thì bật lên:
+
+    brew services start mysql
+
+Bước 3. Chạy website:
+
+    php artisan serve
+
+Bước 4. Mở trình duyệt, vào:
+
+    http://127.0.0.1:8000
+
+Bước 5. Muốn tắt website: quay lại Terminal đang chạy, bấm Ctrl + C.
+
+
+-------------------------------------------------
+B. TÀI KHOẢN ĐĂNG NHẬP DEMO (mật khẩu đều là: password)
+-------------------------------------------------
+
+  Username     Vai trò              Ghi chú
+  ----------   ------------------   --------------------------------------
+  manager      Quản lý              Toàn quyền
+  staff        Nhân viên bán hàng   Có 6 đơn hàng mẫu
+  hang.le      Nhân viên bán hàng   Có 4 đơn hàng mẫu
+  tuan.pham    Nhân viên bán hàng   Đã bị khóa, không đăng nhập được
+
+
+-------------------------------------------------
+C. CÀI ĐẶT LẦN ĐẦU (máy mới, vừa tải code về)
+-------------------------------------------------
+
+Phần mềm cần có (macOS):
+
+    brew install php          (cần PHP 8.3 trở lên)
+    brew install composer
+    brew install mysql
+    brew services start mysql
+
+Không cần Node/npm.
+
+Các bước:
+
+    cd "/Users/damthinh/Documents/Công việc/JVB /Dự án BrSE/mini-sales-management"
+
+    composer install
+    cp .env.example .env
+    php artisan key:generate
+
+    mysql -u root -e "CREATE DATABASE mini_sales CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+
+    php artisan migrate --seed
+    php artisan storage:link
+
+    php artisan serve
+
+Giải thích:
+  - composer install        : tải thư viện (thư mục vendor/)
+  - cp .env.example .env    : tạo file cấu hình
+  - key:generate            : tạo khóa bảo mật cho ứng dụng
+  - CREATE DATABASE ...     : tạo database rỗng tên mini_sales
+  - migrate --seed          : tạo các bảng + nạp dữ liệu mẫu
+  - storage:link            : cho phép hiển thị ảnh sản phẩm đã upload
+  - serve                   : chạy website
+
+Mặc định .env dùng MySQL: user root, KHÔNG mật khẩu, database mini_sales.
+Nếu MySQL của bạn khác, sửa DB_USERNAME / DB_PASSWORD trong file .env.
+
+
+-------------------------------------------------
+D. CÁC LỆNH HAY DÙNG
+-------------------------------------------------
+
+Làm mới toàn bộ dữ liệu demo (XÓA hết dữ liệu hiện có, tạo lại từ đầu):
+
+    php artisan migrate:fresh --seed
+
+Chạy test tự động:
+
+    php artisan test
+
+Xem danh sách Route:
+
+    php artisan route:list
+
+Xem riêng Route của sản phẩm (liên quan Câu 5, 6 trong bộ câu hỏi):
+
+    php artisan route:list --path=products
+
+Xóa cache khi sửa .env mà không thấy tác dụng:
+
+    php artisan config:clear
+
+Đổi cổng nếu cổng 8000 đang bận:
+
+    php artisan serve --port=8001
+
+
+-------------------------------------------------
+E. LỖI THƯỜNG GẶP
+-------------------------------------------------
+
+Hiện tượng                                    Cách xử lý
+-------------------------------------------   -------------------------------------------
+Connection refused (SQLSTATE[HY000] [2002])   MySQL chưa chạy: brew services start mysql
+Unknown database 'mini_sales'                 Chưa tạo database, xem Mục C
+Ảnh sản phẩm không hiện                       Chạy: php artisan storage:link
+Trang báo 419 Page Expired                    Phiên hết hạn, tải lại trang rồi gửi lại form
+Báo "Tài khoản đã bị khóa"                    Tài khoản status Đã khóa, dùng manager mở khóa
+Cổng 8000 đã bị dùng                          Chạy: php artisan serve --port=8001
+Không thấy lệnh php / composer / mysql        Chưa cài, xem phần cài đặt ở Mục C
+
+
+-------------------------------------------------
+F. GHI CHÚ
+-------------------------------------------------
+
+- Project KHÔNG dùng Docker. Chạy trực tiếp trên máy bằng PHP + MySQL.
+- Chi tiết thêm xem README.md trong thư mục project.
+- Cách đưa lên server thật (chưa deploy) xem docs/04-deploy.md.
