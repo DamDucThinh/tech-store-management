@@ -1,8 +1,8 @@
-# Mini Sales Management
+# Tech Store Management
 
-Website quản lý bán hàng đơn giản viết bằng Laravel, bài tập cuối khóa đào tạo BrSE.
+Website quản lý bán hàng cho cửa hàng thiết bị điện tử, viết bằng Laravel. Bài tập cuối khóa đào tạo BrSE (đề bài: Mini Sales Management).
 
-Cửa hàng nhỏ thường ghi sản phẩm và đơn hàng bằng sổ tay hoặc Excel: khó tra cứu, không biết nhân viên nào bán đơn nào, ai cũng sửa được dữ liệu. Mini Sales Management gom sản phẩm, danh mục, nhân viên và đơn hàng vào một hệ thống, có phân quyền giữa **Quản lý** và **Nhân viên bán hàng**.
+Cửa hàng nhỏ thường ghi sản phẩm và đơn hàng bằng sổ tay hoặc Excel: khó tra cứu, không biết nhân viên nào bán đơn nào, ai cũng sửa được dữ liệu. Tech Store Management gom sản phẩm, danh mục, nhân viên và đơn hàng vào một hệ thống, có phân quyền giữa **Quản lý** và **Nhân viên bán hàng**.
 
 ![Trang tổng quan](docs/images/screenshots/dashboard.png)
 
@@ -55,7 +55,7 @@ Không cần Node/npm.
 ### Lần đầu (sau khi clone)
 
 ```bash
-cd mini-sales-management
+cd tech-store-management
 composer install
 cp .env.example .env
 php artisan key:generate
@@ -164,9 +164,9 @@ Chạy trên MySQL cần tạo trước database `mini_sales_test`. Cả hai cá
 ```bash
 git init
 git add .
-git commit -m "Initial commit: Mini Sales Management"
+git commit -m "Initial commit: Tech Store Management"
 git branch -M main
-git remote add origin https://github.com/<tai-khoan>/mini-sales-management.git
+git remote add origin https://github.com/<tai-khoan>/tech-store-management.git
 git push -u origin main
 ```
 

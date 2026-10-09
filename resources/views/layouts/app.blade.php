@@ -12,8 +12,8 @@
     <div class="app">
         <aside class="sidebar" id="sidebar">
             <a href="{{ route('dashboard') }}" class="sidebar-brand">
-                <span class="brand-mark">MS</span>
-                Mini Sales
+                <span class="brand-mark">TS</span>
+                Tech Store
             </a>
 
             <nav class="nav" aria-label="Menu chính">
@@ -61,7 +61,7 @@
                 <button type="button" class="icon-button" data-sidebar-toggle aria-controls="sidebar" aria-label="Mở menu">
                     @include('partials.icon', ['name' => 'menu'])
                 </button>
-                Mini Sales
+                Tech Store
             </header>
 
             <main class="content">

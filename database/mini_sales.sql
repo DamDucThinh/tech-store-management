@@ -121,7 +121,7 @@ CREATE TABLE `employee_profiles` (
 
 LOCK TABLES `employee_profiles` WRITE;
 /*!40000 ALTER TABLE `employee_profiles` DISABLE KEYS */;
-INSERT INTO `employee_profiles` VALUES (1,1,'Nguyễn Văn Quản','quan.nguyen@minisales.test','0901234567','12 Láng Hạ, Đống Đa, Hà Nội',NULL,'2026-10-06 10:04:02','2026-10-06 10:04:02'),(2,2,'Trần Thị Bán','ban.tran@minisales.test','0912345678','45 Cầu Giấy, Hà Nội',NULL,'2026-10-06 10:04:02','2026-10-06 10:04:02'),(3,3,'Lê Minh Hàng','hang.le@minisales.test','0987654321','8 Nguyễn Trãi, Thanh Xuân, Hà Nội',NULL,'2026-10-06 10:04:03','2026-10-06 10:04:03'),(4,4,'Phạm Anh Tuấn','tuan.pham@minisales.test','0976543210','20 Kim Mã, Ba Đình, Hà Nội',NULL,'2026-10-06 10:04:03','2026-10-06 10:04:03');
+INSERT INTO `employee_profiles` VALUES (1,1,'Nguyễn Văn Quản','quan.nguyen@techstore.test','0901234567','12 Láng Hạ, Đống Đa, Hà Nội',NULL,'2026-10-06 10:04:02','2026-10-06 10:04:02'),(2,2,'Trần Thị Bán','ban.tran@techstore.test','0912345678','45 Cầu Giấy, Hà Nội',NULL,'2026-10-06 10:04:02','2026-10-06 10:04:02'),(3,3,'Lê Minh Hàng','hang.le@techstore.test','0987654321','8 Nguyễn Trãi, Thanh Xuân, Hà Nội',NULL,'2026-10-06 10:04:03','2026-10-06 10:04:03'),(4,4,'Phạm Anh Tuấn','tuan.pham@techstore.test','0976543210','20 Kim Mã, Ba Đình, Hà Nội',NULL,'2026-10-06 10:04:03','2026-10-06 10:04:03');
 /*!40000 ALTER TABLE `employee_profiles` ENABLE KEYS */;
 UNLOCK TABLES;
 

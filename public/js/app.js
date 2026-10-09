@@ -1,5 +1,5 @@
 /*
- * Mini Sales Management - JavaScript thuần, không dùng thư viện.
+ * Tech Store Management - JavaScript thuần, không dùng thư viện.
  *
  * 1. Mở/đóng menu trên điện thoại
  * 2. Hỏi xác nhận trước khi xóa

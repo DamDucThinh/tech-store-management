@@ -19,7 +19,7 @@ sequenceDiagram
     participant LV as Laravel<br/>public/index.php
     participant DB as MySQL
 
-    U->>DNS: minisales.example.com có IP là gì?
+    U->>DNS: techstore.example.com có IP là gì?
     DNS-->>U: 203.0.113.10 (bản ghi A)
     U->>NG: HTTPS GET /products (kết nối tới 203.0.113.10:443)
     alt File tĩnh (css, js, ảnh)
@@ -41,7 +41,7 @@ sequenceDiagram
 
 | Bước | Thành phần | Chuyện gì xảy ra |
 |---|---|---|
-| 1 | **Domain** | Người dùng gõ `https://minisales.example.com/products`. Domain là tên dễ nhớ, mua từ nhà đăng ký tên miền. |
+| 1 | **Domain** | Người dùng gõ `https://techstore.example.com/products`. Domain là tên dễ nhớ, mua từ nhà đăng ký tên miền. |
 | 2 | **DNS** | Trình duyệt hỏi DNS: "domain này ở địa chỉ IP nào?". Bản ghi **A** trỏ domain về IP public của server, ví dụ `203.0.113.10`. Kết quả được cache theo TTL. |
 | 3 | **Kết nối tới server** | Trình duyệt mở kết nối TCP tới IP đó, cổng 443 (HTTPS), bắt tay TLS bằng chứng chỉ SSL để mã hóa dữ liệu. |
 | 4 | **Nginx** | Web server nhận request. Nếu là file tĩnh có sẵn trong `public/` (CSS, JS, ảnh) thì trả luôn, rất nhanh. Nếu không, chuyển request cho PHP-FPM. Nginx không tự chạy được PHP. |
@@ -80,8 +80,8 @@ Không dùng tài khoản `root` cho ứng dụng.
 
 ```bash
 cd /var/www
-sudo git clone https://github.com/<tai-khoan>/mini-sales-management.git
-cd mini-sales-management
+sudo git clone https://github.com/<tai-khoan>/tech-store-management.git
+cd tech-store-management
 composer install --no-dev --optimize-autoloader
 ```
 
@@ -97,7 +97,7 @@ Sửa `.env` cho môi trường production:
 ```env
 APP_ENV=production
 APP_DEBUG=false            # bắt buộc false, tránh lộ thông tin lỗi ra ngoài
-APP_URL=https://minisales.example.com
+APP_URL=https://techstore.example.com
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -133,8 +133,8 @@ File `/etc/nginx/sites-available/mini-sales`:
 ```nginx
 server {
     listen 80;
-    server_name minisales.example.com;
-    root /var/www/mini-sales-management/public;   # chỉ public/ được lộ ra ngoài
+    server_name techstore.example.com;
+    root /var/www/tech-store-management/public;   # chỉ public/ được lộ ra ngoài
 
     index index.php;
     charset utf-8;
@@ -167,13 +167,13 @@ sudo systemctl reload nginx
 
 ### Bước 8: Trỏ domain và cài HTTPS
 
-1. Vào trang quản lý DNS của nhà cung cấp domain, tạo bản ghi **A**: `minisales.example.com` trỏ tới IP public của VPS.
-2. Chờ DNS cập nhật (vài phút tới vài giờ), kiểm tra bằng `nslookup minisales.example.com`.
+1. Vào trang quản lý DNS của nhà cung cấp domain, tạo bản ghi **A**: `techstore.example.com` trỏ tới IP public của VPS.
+2. Chờ DNS cập nhật (vài phút tới vài giờ), kiểm tra bằng `nslookup techstore.example.com`.
 3. Cài chứng chỉ SSL miễn phí:
 
 ```bash
 sudo apt install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d minisales.example.com
+sudo certbot --nginx -d techstore.example.com
 ```
 
 4. Mở firewall: `sudo ufw allow 'Nginx Full'`. Chỉ mở cổng 22 (SSH), 80 và 443. Không mở cổng MySQL 3306 ra ngoài.
@@ -181,7 +181,7 @@ sudo certbot --nginx -d minisales.example.com
 ### Bước 9: Cập nhật phiên bản mới
 
 ```bash
-cd /var/www/mini-sales-management
+cd /var/www/tech-store-management
 php artisan down                       # bật chế độ bảo trì
 git pull origin main
 composer install --no-dev --optimize-autoloader

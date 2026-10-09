@@ -12,7 +12,7 @@
 
 ## 1. Giới thiệu sản phẩm (1–2 phút)
 
-> Mini Sales Management là website quản lý bán hàng cho một cửa hàng nhỏ bán thiết bị điện tử. Vấn đề cửa hàng gặp phải: sản phẩm, đơn hàng ghi sổ tay hoặc Excel, khó tra cứu, không biết nhân viên nào bán đơn nào, và ai cũng sửa được dữ liệu.
+> Tech Store Management là website quản lý bán hàng cho một cửa hàng nhỏ bán thiết bị điện tử. Vấn đề cửa hàng gặp phải: sản phẩm, đơn hàng ghi sổ tay hoặc Excel, khó tra cứu, không biết nhân viên nào bán đơn nào, và ai cũng sửa được dữ liệu.
 >
 > Hệ thống có 4 nhóm chức năng: quản lý sản phẩm (có ảnh, tìm kiếm, lọc), quản lý danh mục, quản lý nhân viên (tài khoản + hồ sơ), và quản lý đơn hàng với 4 trạng thái. Có 2 vai trò: Quản lý thấy và quản lý tất cả; Nhân viên bán hàng chỉ quản lý đơn của mình.
 >

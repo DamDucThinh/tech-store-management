@@ -1,5 +1,5 @@
 /*
- * Mini Sales Management - CSS tự viết, không dùng framework.
+ * Tech Store Management - CSS tự viết, không dùng framework.
  * Bố cục dùng Flexbox, responsive bằng media query:
  *   > 900px  : sidebar cố định bên trái + nội dung bên phải
  *   <= 900px : sidebar ẩn, mở bằng nút menu trên thanh topbar

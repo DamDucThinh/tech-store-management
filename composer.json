@@ -1,8 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "jvb-brse/mini-sales-management",
+    "name": "jvb-brse/tech-store-management",
     "type": "project",
-    "description": "Mini Sales Management - Final Project khóa đào tạo BrSE (Laravel + MySQL).",
+    "description": "Tech Store Management - Final Project khóa đào tạo BrSE (Laravel + MySQL).",
     "keywords": [
         "laravel",
         "framework"

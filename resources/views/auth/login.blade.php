@@ -10,7 +10,7 @@
     <main class="auth">
         <div class="card auth-card">
             <div class="auth-brand">
-                <span class="brand-mark">MS</span>
+                <span class="brand-mark">TS</span>
                 <h1>{{ config('app.name') }}</h1>
                 <span class="muted small">Đăng nhập để tiếp tục</span>
             </div>

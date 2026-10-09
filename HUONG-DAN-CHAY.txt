@@ -1,8 +1,8 @@
-HƯỚNG DẪN CHẠY CHƯƠNG TRÌNH MINI SALES MANAGEMENT
-=================================================
+HƯỚNG DẪN CHẠY CHƯƠNG TRÌNH TECH STORE MANAGEMENT
+================================================
 
 Thư mục project:
-/Users/damthinh/Documents/Công việc/JVB /Dự án BrSE/mini-sales-management
+/Users/damthinh/Documents/Công việc/JVB /Dự án BrSE/tech-store-management
 
 (Lưu ý: tên thư mục "JVB " có dấu cách ở cuối, khi gõ lệnh phải đặt đường dẫn trong dấu nháy kép.)
 
@@ -13,7 +13,7 @@ A. CHẠY HÀNG NGÀY (máy đã cài đặt xong)
 
 Bước 1. Mở Terminal, vào thư mục project:
 
-    cd "/Users/damthinh/Documents/Công việc/JVB /Dự án BrSE/mini-sales-management"
+    cd "/Users/damthinh/Documents/Công việc/JVB /Dự án BrSE/tech-store-management"
 
 Bước 2. Bảo đảm MySQL đang chạy:
 
@@ -61,7 +61,7 @@ Không cần Node/npm.
 
 Các bước:
 
-    cd "/Users/damthinh/Documents/Công việc/JVB /Dự án BrSE/mini-sales-management"
+    cd "/Users/damthinh/Documents/Công việc/JVB /Dự án BrSE/tech-store-management"
 
     composer install
     cp .env.example .env
